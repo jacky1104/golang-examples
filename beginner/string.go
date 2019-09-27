@@ -35,4 +35,34 @@ func main() {
 		fmt.Printf("%x ", placeOfInterest[i])
 	}
 	fmt.Printf("\n")
+
+	const country = "中国"
+	// utf-8 byte
+	fmt.Printf("%x\n", country)
+	fmt.Printf("% x\n ", country)
+
+	// unicode
+	fmt.Printf("%+q\n ", country)
+	fmt.Printf("%q\n ", country)
+
+	for i := 0; i < len(country); i++ {
+		fmt.Printf("%x ", country[i])
+	}
+	fmt.Println("chinese character to byte and unicode")
+	for index, value := range country {
+		fmt.Printf("%d, %x ", index, value)
+		fmt.Printf("%d, %+q ", index, value)
+		fmt.Printf("%d, %v ", index, value)
+		fmt.Printf("%d, %+v ", index, value)
+		fmt.Printf("%d, %s \n", index, string(value))
+	}
+
+	fmt.Println("chinese character to rune")
+	for index, value := range []rune(country) {
+		fmt.Printf("%d, %x ", index, value)
+		fmt.Printf("%d, %+q ", index, value)
+		fmt.Printf("%d, %v ", index, value)
+		fmt.Printf("%d, %+v ", index, value)
+		fmt.Printf("%d, %s \n", index, string(value))
+	}
 }
